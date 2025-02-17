@@ -1,0 +1,9 @@
+/venv
+/.idea
+*.iml
+*.DS_Store
+*.egg_info
+/data
+/out
+prepare_data.py
+group_saola_steel_plates_test_npbytes.py
