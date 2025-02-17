@@ -42,7 +42,7 @@ def print_compare_feature_results(algo_name: String, test_name: String, selected
             attribute_common_names[0] if len(attribute_common_names) == 1
             else f"{attribute_common_names[0]} and {attribute_common_names[1]}"
             if len(attribute_common_names) == 2
-            else f"{', '.join(attribute_common_names[: -1])}, and {selected_features_common[-1]}"
+            else f"{', '.join(attribute_common_names[: -1])}, and {attribute_common_names[-1]}"
         )
         print(prefix + names)
 

@@ -14,6 +14,4 @@ def extract_feature_index_list(attribute_names: List[Any], class_attribute_idx: 
 
 
 def extract_same_features(original_features_selected: List[int], test_features_selected: List[int]) -> List[int]:
-    print(original_features_selected)
-    print(test_features_selected)
     return np.intersect1d(original_features_selected, test_features_selected).tolist()

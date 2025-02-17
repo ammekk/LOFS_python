@@ -25,7 +25,7 @@ def main():
 
     feature_map = extract_feature_map(attribute_names, class_attribute_idx)
     feature_index = extract_feature_index_list(attribute_names, class_attribute_idx,
-                                               lambda a: a[1:] - 1)
+                                               lambda a: int(a[1:]) - 1)
 
     # getting features into groups
     group_feature = group_features(feature_index, 2)
