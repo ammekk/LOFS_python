@@ -2,7 +2,7 @@
 /.idea
 *.iml
 *.DS_Store
-*.egg_info
+*.egg-info
 /data
 /out
 prepare_data.py

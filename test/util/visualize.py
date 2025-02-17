@@ -35,7 +35,7 @@ def print_data_info(attribute_names: List[Any], class_attribute_idx: int, data_s
 def print_compare_feature_results(algo_name: String, test_name: String, selected_features_common: List[int],
                                   feature_map: dict[int, str]) -> None:
     attribute_common_names = [feature_map[idx] for idx in selected_features_common]
-    print(f"There are {len(attribute_common_names)} between {algo_name} and {test_name}")
+    print(f"There are {len(attribute_common_names)} common features between {algo_name} and {test_name}")
     if len(selected_features_common) > 0:
         prefix = "The feature in common is " if len(selected_features_common) == 1 else "The features in common are "
         names = (
