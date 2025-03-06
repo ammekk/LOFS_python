@@ -29,6 +29,7 @@ def print_data_info(attribute_names: List[Any], class_attribute_idx: int, data_s
     if len(attribute_names) >= 10:
         print("First 10 feature labels are " + " ".join(attribute_names[i] for i in range(10)))
     else:
+        print(attribute_names[:10])
         print(f"First {len(attribute_names)} " + " ".join(attribute_names[i] for i in range(len(attribute_names))))
     print("Class label is " + attribute_names[class_attribute_idx])
     print(f"Shape of data is {data_shape}")

@@ -30,7 +30,7 @@ any], k: int = 5) -> List[int]:
     # uses the mutual information criterion to evaluate the dependency between features
     # and the target variable, selecting the top k features.
 
-    selector = SelectKBest(score_func=mutual_info_classif, k=5)
+    selector = SelectKBest(score_func=mutual_info_classif, k=k)
     _ = selector.fit_transform(x, y)
 
     selected_features = selector.get_support(indices=True)
