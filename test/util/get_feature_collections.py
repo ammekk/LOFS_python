@@ -4,7 +4,7 @@ from typing import List, Callable, Any
 import numpy as np
 
 
-def extract_feature_map(attribute_names: list[Any], class_attribute_idx: Any) -> dict[int, any]:
+def extract_idx_to_feature_map(attribute_names: list[Any], class_attribute_idx: Any) -> dict[int, any]:
     return {idx: item for idx, item in enumerate(attribute_names) if item != attribute_names[class_attribute_idx]}
 
 

@@ -5,11 +5,12 @@ import numpy as np
 
 
 def print_selected_feature_info(select_features: List[int], time: float,
-                                feature_map: Dict[int, str], select_groups: int = -1) -> None:
+                                feature_map: Dict[int, str], label: str, select_groups: int = -1) -> None:
     select_feature_names = [feature_map[i] for i in select_features]
     if len(select_features) == 0:
         "Error: No features selected"
         return
+    print(f"{label} preformed.")
     print(f"Time taken was {time} seconds")
     print(((f"The selected " + ("feature" if len(select_features) == 1 else "features") +
             f" came from {select_groups}" +
@@ -31,6 +32,7 @@ def print_data_info(attribute_names: List[Any], class_attribute_idx: int, data_s
         print(f"First {len(attribute_names)} " + " ".join(attribute_names[i] for i in range(len(attribute_names))))
     print("Class label is " + attribute_names[class_attribute_idx])
     print(f"Shape of data is {data_shape}")
+
 
 def print_compare_feature_results(algo_name: String, test_name: String, selected_features_common: List[int],
                                   feature_map: dict[int, str]) -> None:
