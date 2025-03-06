@@ -33,7 +33,7 @@ def main():
     anova_features = select_top_k_features_anova_f_statistic(data[:, :-1], data[:, -1], feature_map,
                                                              50)
     print_compare_feature_results("group-saola", "anova-f-statistic",
-                                  extract_same_features(select_features, anova_features), feature_map, 50)
+                                  extract_same_features(select_features, anova_features), feature_map)
 
     mutual_information_features = select_top_k_features_mutual_information(data[:, :-1], data[:, -1], feature_map,
                                                                            50)
