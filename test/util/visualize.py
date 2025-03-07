@@ -25,14 +25,21 @@ def print_selected_feature_info(select_features: List[int], time: float,
     print(prefix + names)
 
 
-def print_data_info(attribute_names: List[Any], class_attribute_idx: int, data_shape: Tuple[int, int]) -> None:
+def print_data_info(data: np.ndarray, attribute_names: List[Any], class_attribute_idx: int, data_shape: Tuple[int, int]) -> None:
     if len(attribute_names) >= 10:
-        print("First 10 feature labels are " + " ".join(attribute_names[i] for i in range(10)))
+        print(f"First 10 feature labels are {attribute_names[:10]}")
+        print(f"Last 10 feature labels are {attribute_names[-10:]}")
     else:
-        print(attribute_names[:10])
         print(f"First {len(attribute_names)} " + " ".join(attribute_names[i] for i in range(len(attribute_names))))
+    if len(data[0]) >= 30:
+        print(f"First 31 values in row 1 are {data[0][:31]}")
+        print(f"Last 31 values in row 1 are {data[0][-31:]}")
+    else:
+        print(f"First {len(attribute_names)} " + " ".join(attribute_names[i] for i in range(len(attribute_names))))
+
     print("Class label is " + attribute_names[class_attribute_idx])
     print(f"Shape of data is {data_shape}")
+
 
 
 def print_compare_feature_results(algo_name: String, test_name: String, selected_features_common: List[int],

@@ -8,9 +8,8 @@ from scipy.stats import norm
 
 def my_cond_indep_fisher_z(data: np.ndarray, x: int, y: int, s: List[int], n: int,
                            alpha: float = 0.05) -> Tuple[int, float, float]:
-
     cols = [x, y] + s
-    data_subset = np.take(data, cols, axis=1)
+    data_subset = data[:, cols]
 
     c = np.cov(data_subset, rowvar=False, dtype=np.float32)
 
@@ -30,7 +29,3 @@ def my_cond_indep_fisher_z(data: np.ndarray, x: int, y: int, s: List[int], n: in
     r = abs(r)
 
     return ci, r, p
-
-
-
-

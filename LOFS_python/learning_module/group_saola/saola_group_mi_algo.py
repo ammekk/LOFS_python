@@ -83,10 +83,12 @@ def saola_group_mi(group_features: List[List[int]], data: np.ndarray, class_attr
     select_feature = []
     select_group = 0
 
-    for i in range(num_group):
-        if g[i]:
-            select_feature.extend(g[i])
-            select_group += 1
+    select_feature = [
+        f for i, group in enumerate(g) if group  # Ensure group is not empty
+        for f in group if f != class_attribute  # Ensure class_attribute is not selected
+    ]
+
+    select_group = sum(1 for group in g if group)
 
     time = tm.perf_counter() - start_time
     return select_feature, select_group, time
